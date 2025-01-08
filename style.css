@@ -1,52 +1,172 @@
 /* Basic Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  color: #333;
+}
+
+/* General Section Styling */
+section {
+  width: 100%;
+  padding: 20px 0;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #007bff;
+}
+
+/* About Section */
+#about {
+  background-color: #fff;
+  padding: 20px;
+}
+
+#about p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Storyline Section */
+#storyline {
+  background-color: #fff;
+  padding: 20px;
+}
+
+#storyline p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Blog Section */
+#blog {
+  max-width: 1200px; /* Ensures the width is the same as other sections */
+  margin: 20px auto; /* Centers the section horizontally */
+  padding: 20px;
+  overflow-x: hidden; /* Prevent horizontal overflow outside the container */
+}
+
+.blog-container {
+  display: flex; /* Horizontal layout */
+  gap: 20px; /* Space between posts */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding-bottom: 10px;
+  scroll-behavior: smooth; /* Smooth scrolling for user interaction */
+  height: auto; /* Ensure the container adjusts to the content height */
+}
+
+.substack-post-embed {
+  flex: 0 0 300px; /* Fixed width for each post */
+  padding: 10px;
+  text-align: center;
+  height: auto; /* Allow the height to adjust based on content */
+  border: none; /* Removed the border */
+  box-shadow: none; /* Removed the box-shadow */
+}
+
+.substack-post-embed a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Optional: Hide scrollbar for a cleaner look */
+.blog-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Projects Section */
+#projects {
+  max-width: 1200px; /* Ensures the width is the same as other sections */
+  margin: 20px auto; /* Centers the section horizontally */
+  padding: 20px;
+}
+
+#projects h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #007bff;
+}
+
+.projects-container {
+  display: flex; /* Horizontal layout */
+  gap: 20px; /* Space between projects */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding-bottom: 10px;
+  scroll-behavior: smooth; /* Smooth scrolling for user interaction */
+}
+
+.project-card {
+  flex: 0 0 300px; /* Fixed width for each project */
+  padding: 10px;
+  text-align: center;
+  border: none; /* Removed border */
+  box-shadow: none; /* Removed shadow */
+  height: auto; /* Allow the height to adjust based on content */
+}
+
+.project-image {
+  width: 100%; /* Ensures the image fills the width of the card */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.project-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.project-preview {
+  margin-top: 10px;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.project-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Optional: Hide scrollbar for a cleaner look */
+.projects-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .substack-post-embed {
+    flex: 0 0 80%; /* Adjust blog post size for smaller screens */
   }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    padding: 20px;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  header nav ul {
-    list-style-type: none;
-  }
-  
-  header nav ul li {
-    display: inline;
-    margin: 0 15px;
-  }
-  
-  header nav ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  section {
-    padding: 20px;
-    margin: 20px 0;
-  }
-  
-  h2 {
-    color: #333;
-  }
-  
-  #contact a {
-    display: inline-block;
-    background-color: #333;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-  }
+}
+
+/* Optional: Hide scrollbar for a cleaner look */
+.blog-container::-webkit-scrollbar {
+  display: none;
+}

@@ -3,56 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your portfolio</title>
+    <title>Your Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            color: #333;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #007bff;
+        }
+
+        /* Blog Section */
+        #blog {
+            padding: 20px;
+        }
+
+        .blog-container {
+            display: flex; /* Arrange items horizontally */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            gap: 20px; /* Space between blog items */
+            padding: 10px 0; /* Add padding for better appearance */
+        }
+
+        .substack-post-embed {
+            min-width: 300px; /* Minimum width for each blog card */
+            max-width: 400px; /* Optional: Set a maximum width */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 0 0 auto; /* Prevent shrinking */
+        }
+
+        @media screen and (max-width: 768px) {
+            .substack-post-embed {
+                min-width: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about-me">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
+    <!-- About Section -->
     <section id="about">
-      <h2>About</h2>
-      <p>Description of Project 1.</p>
+        <p>Currently a Master’s student at UCL studying Cognitive and Decision Science, my research focuses on perception, memory formation, and NLP memory modeling under Dr. Avital Hahamy's supervision. I am also involved in developing LiveSign at UCL AI Foundry Cohort 3 and volunteering with Project Impactive to design assistive technology. <br><br>Before my Master’s, I spent 6 years as a UX Researcher, Designer, and Product Owner in startups, building products from inception, including a navigation app for individuals with visual impairment.</p>
     </section>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <ul>
-          <li><a href="#">Project 1</a></li>
-          <li><a href="#">Project 2</a></li>
-        </ul>
-      </section>
-    
-      <section id="projects">
-        <h2>Projects</h2>
-        <div id="project-list">
-          <div class="project-card">
-            <h3>Project 1</h3>
-            <p>Description of Project 1.</p>
-          </div>
+    <!-- Storyline Section -->
+    <section id="storyline">
+        <p><b>2017: Graduation</b> I graduated from The University of Auckland with first class honours in both a Bachelor of Arts (Hons) in Psychology and a Bachelor of Commerce in Marketing and Management.<br><br>
+        <b>2018: First Step into Tech</b> I started my tech career as a Recruitment Consultant at Aspire, focusing on hiring engineers, designers, and product managers for startups and consultancies.<br><br>
+        <b>2018: People & Culture Specialist</b> I joined PALO IT as a People and Culture Specialist, where I recruited engineers, designers, and product managers while fostering a vibrant company culture. This experience gave me deeper insights into role collaboration within the tech world.<br><br>
+        <b>2019: UX Research and Agile Consultant</b> Leveraging my psychology background, I transitioned into a UX Research and Agile Consultant role, making meaningful contributions to client projects, particularly within startups.<br><br>
+        <b>2021: Product Lead at Ed-tech Startup</b> At Big Bang Academy, an ed-tech startup backed by Alibaba Entrepreneurs Fund and Gobi Ventures, I served as their first technical hire. My responsibilities spanned company strategy, investor engagement, product direction, user research, and UI design. This role provided me with invaluable startup experience.<br><br>
+        <b>2022: UX Product Lead at Geotech Startup</b> I joined Maphive Technology Limited, a geotech startup supplying indoor map data for Apple. I led the development of apps and web platforms for diverse users, including those with visual impairments, collaborating closely with engineers and designers to launch products weekly.<br><br>
+        <b>2024: Master's at UCL</b> Currently, I’m pursuing a Master’s in Cognitive and Decision Science at UCL, with modules in Python programming, computational modeling of cognition, and computational linguistics. My thesis focuses on perception, memory, and NLP memory modeling.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <!-- <h2>My Projects</h2> -->
+      <div class="projects-container">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <img src="path/to/your/image.jpg" alt="Project Image" class="project-image">
+          <p class="project-title">Project Title 1</p>
+          <p class="project-preview">A short preview of the project, explaining its purpose and key features.</p>
+          <a href="link-to-project" class="project-link">Read more</a>
         </div>
-      </section>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <img src="path/to/your/image.jpg" alt="Project Image" class="project-image">
+          <p class="project-title">Project Title 2</p>
+          <p class="project-preview">A short preview of the project, explaining its purpose and key features.</p>
+          <a href="link-to-project" class="project-link">Read more</a>
+        </div>
+
+        <!-- Add more projects as needed -->
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- Blog Section -->
+    <section id="blog">
+      <!-- <h2>Thoughts</h2> -->
+      <div class="blog-container">
+        <!-- Embed for Post 1 -->
+        <div class="substack-post-embed">
+          <p lang="en">Oko's Visionary Approach to Pedestrian Navigation by Ivy Chan</p>
+          <p>Enhancing Mobility for the Visually Impaired with AI and Accessibility Innovation</p>
+          <a data-post-link href="https://ivychan.substack.com/p/okos-visionary-approach-to-pedestrian">Read on Substack</a>
+        </div>
+        <script async src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>
     
-      <section id="blog">
-        <h2>My Blog</h2>
-        <p>Recent blog posts go here.</p>
-      </section>
+        <!-- Embed for Post 2 -->
+        <div class="substack-post-embed">
+          <p lang="en">Design Victory: Empowering Inclusive Gaming with Personalised Controllers by Ivy Chan</p>
+          <p>Discover how the unique design of the PlayStation Access™ controller and the limitless customisation of the Xbox Adaptive Controller revolutionises the way players of all abilities experience gaming.</p>
+          <a data-post-link href="https://ivychan.substack.com/p/design-victory-empowering-inclusive">Read on Substack</a>
+        </div>
+        <script async src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>
     
-      <section id="contact">
-        <h2>Contact</h2>
-        <a href="mailto:youremail@example.com">Email Me</a>
-      </section>
+        <!-- Embed for Post 3 -->
+        <div class="substack-post-embed">
+          <p lang="en">Exploring Android and iOS Accessibility Features by Ivy Chan</p>
+          <p>Uncover and compare their strategies, accessibility features, and preferences among individuals with visual and hearing impairments.</p>
+          <a data-post-link href="https://ivychan.substack.com/p/exploring-android-and-ios-accessibility">Read on Substack</a>
+        </div>
+        <script async src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>
     
-      <script src="script.js"></script>
+        <!-- Embed for Post 4 -->
+        <div class="substack-post-embed">
+          <p lang="en">A Glimpse into the World of Accessibility by Ivy Chan</p>
+          <p>Get ready for the journey into the world of accessibility and their impact on user experience</p>
+          <a data-post-link href="https://ivychan.substack.com/p/unveiling-the-hidden-abilities-a">Read on Substack</a>
+        </div>
+        <script async src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>
+      </div>
+    </section>
+    
 
 </body>
 </html>
