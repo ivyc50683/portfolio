@@ -16,8 +16,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-  
-    // Enable smooth vertical scrolling with scroll snapping
-    document.body.style.scrollSnapType = 'y mandatory';
-  });
-  
+
+    // Add smooth scrolling on wheel scroll
+    let isHorizontalScroll = false;
+
+    // Detect scrolling direction and apply scroll behavior
+    document.querySelectorAll('section').forEach(section => {
+      section.addEventListener('wheel', (e) => {
+        // Detect horizontal or vertical scroll
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+          isHorizontalScroll = true;  // Horizontal scroll (inside projects or blog)
+        } else {
+          isHorizontalScroll = false; // Vertical scroll (for full-page sections)
+        }
+
+        if (!isHorizontalScroll) {
+          // Enable vertical scroll snapping for full-page sections
+          document.body.style.scrollSnapType = 'y mandatory';
+          const nextSection = e.deltaY > 0 ? section.nextElementSibling : section.previousElementSibling;
+          if (nextSection) {
+            e.preventDefault();  // Prevent default scroll behavior
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        } else {
+          // Disable scroll snapping for horizontal scrolling sections
+          document.body.style.scrollSnapType = 'none';
+        }
+      });
+    });
+});
