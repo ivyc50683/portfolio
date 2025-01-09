@@ -1,172 +1,107 @@
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  padding: 20px;
-  color: #333;
-}
-
 /* General Section Styling */
 section {
-  width: 100%;
-  padding: 20px 0;
+  width: 90%;
   max-width: 1200px;
-  margin: 20px auto;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: left;
-  color: #007bff;
-}
-
-/* About Section */
-#about {
-  background-color: #fff;
+  height: 100vh;
   padding: 20px;
-}
-
-#about p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.8;
-}
-
-/* Storyline Section */
-#storyline {
-  background-color: #fff;
-  padding: 20px;
-}
-
-#storyline p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.8;
-}
-
-/* Blog Section */
-#blog {
-  max-width: 1200px; /* Ensures the width is the same as other sections */
-  margin: 20px auto; /* Centers the section horizontally */
-  padding: 20px;
-  overflow-x: hidden; /* Prevent horizontal overflow outside the container */
-}
-
-.blog-container {
-  display: flex; /* Horizontal layout */
-  gap: 20px; /* Space between posts */
-  overflow-x: auto; /* Enable horizontal scrolling */
-  padding-bottom: 10px;
-  scroll-behavior: smooth; /* Smooth scrolling for user interaction */
-  height: auto; /* Ensure the container adjusts to the content height */
-}
-
-.substack-post-embed {
-  flex: 0 0 300px; /* Fixed width for each post */
-  padding: 10px;
-  text-align: center;
-  height: auto; /* Allow the height to adjust based on content */
-  border: none; /* Removed the border */
-  box-shadow: none; /* Removed the box-shadow */
-}
-
-.substack-post-embed a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-  display: block;
-  margin-top: 10px;
-}
-
-/* Optional: Hide scrollbar for a cleaner look */
-.blog-container::-webkit-scrollbar {
-  display: none;
+  margin: 0 auto;
+  overflow: hidden;
+  scroll-snap-align: start;
 }
 
 /* Projects Section */
-#projects {
-  max-width: 1200px; /* Ensures the width is the same as other sections */
-  margin: 20px auto; /* Centers the section horizontally */
-  padding: 20px;
-}
-
-#projects h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: left;
-  color: #007bff;
-}
-
-.projects-container {
-  display: flex; /* Horizontal layout */
-  gap: 20px; /* Space between projects */
-  overflow-x: auto; /* Enable horizontal scrolling */
-  padding-bottom: 10px;
-  scroll-behavior: smooth; /* Smooth scrolling for user interaction */
+#projects .projects-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  scroll-behavior: smooth;
+  position: relative;
+  width: 100%;
 }
 
 .project-card {
-  flex: 0 0 300px; /* Fixed width for each project */
-  padding: 10px;
-  text-align: center;
-  border: none; /* Removed border */
-  box-shadow: none; /* Removed shadow */
-  height: auto; /* Allow the height to adjust based on content */
+  flex: 0 0 90%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  overflow: hidden;
 }
 
-.project-image {
-  width: 100%; /* Ensures the image fills the width of the card */
-  height: auto; /* Maintains aspect ratio */
+.project-description-card {
+  min-width: 30%;
+  max-width: 50%;
+}
+
+.project-card:hover {
+  opacity: 1;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-card .project-content {
+  padding: 20px;
 }
 
 .project-title {
   font-weight: bold;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .project-preview {
-  margin-top: 10px;
   color: #555;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
-.project-link {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-  display: block;
-  margin-top: 10px;
+.expand-btn {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-/* Optional: Hide scrollbar for a cleaner look */
-.projects-container::-webkit-scrollbar {
-  display: none;
+.expand-btn:hover {
+  background-color: #0056b3;
 }
 
-
-
-
-
-
-
-
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .substack-post-embed {
-    flex: 0 0 80%; /* Adjust blog post size for smaller screens */
-  }
+/* Fade Effect for Projects and Blogs */
+.projects-container::after,
+.blog-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, white);
 }
 
-/* Optional: Hide scrollbar for a cleaner look */
+/* Blog Section */
+#blog .blog-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.blog-description-card {
+  min-width: 30%;
+  max-width: 50%;
+}
+
+/* Hide Scrollbar */
+.projects-container::-webkit-scrollbar,
 .blog-container::-webkit-scrollbar {
   display: none;
 }
