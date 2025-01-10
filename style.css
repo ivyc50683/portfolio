@@ -1,5 +1,7 @@
 /* General Section Styling */
 section {
+  font-family: "Arial", "Helvetica", sans-serif; /* Use sans-serif fonts */
+  line-height: 150%;
   width: 90%;
   max-width: 1200px;
   height: 100vh;
@@ -9,10 +11,17 @@ section {
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden; /* Prevent overflow for vertical sections */
-  scroll-snap-type: y mandatory; /* Ensure snap type is enforced */
+  overflow: hidden; 
+  scroll-snap-type: y mandatory; /* Snap vertically */
   scroll-snap-align: start; /* Snap to the start of each section */
   scroll-snap-stop: always; /* Force snapping to happen immediately */
+}
+
+.about-gif {
+  width: 30%; /* Set the desired width */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 auto; /* Center the image horizontally */
+  display: block; /* Ensure it's treated as a block element */
 }
 
 /* Ensure sections that allow horizontal scrolling have appropriate width */
@@ -33,11 +42,11 @@ section {
 }
 
 .project-card {
-  flex: 0 0 90%;
+  flex: 0 0 60%;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  opacity: 0.8;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 1;
   transition: opacity 0.3s;
   overflow: hidden;
 }
@@ -45,10 +54,6 @@ section {
 .project-description-card {
   min-width: 30%;
   max-width: 50%;
-}
-
-.project-card:hover {
-  opacity: 1;
 }
 
 .project-card img {
@@ -59,39 +64,125 @@ section {
 
 .project-card .project-content {
   padding: 20px;
+  padding-top: 5px;
 }
 
 .project-title {
   font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 8px;
 }
 
 .project-preview {
-  color: #555;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-weight: 200;
+  color: #7b7a7a;
+  font-size: 1rem;
+  line-height: 130%;
 }
 
 .expand-btn {
+  width: 100%;
   margin-top: 15px;
   padding: 10px;
-  background-color: #007BFF;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+  background-color: #fff; /* White background */
+  color: #ff6200; /* Orange label */
+  font-weight: 500; /* Bold label */
+  font-size: 15px; /* Label size */
+  border: 0.5px solid #ccc; /* Thin grey border */
+  border-radius: 4px; /* Keep rounded corners */
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
 
 .expand-btn:hover {
-  background-color: #0056b3;
+  background-color: #f7f7f7; /* Slightly darker white on hover */
+  color: #ff6200; /* Slightly darker orange label on hover */
+}
+
+/* Modal */
+.modal {
+  font-family: "Arial", "Helvetica", sans-serif; /* Use sans-serif fonts */
+  line-height: 150%;
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255); /* Semi-transparent background */
+  z-index: 999999;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  top: 40px;
+  padding-bottom: 60px;
+  padding-left: 10%;
+  padding-right: 10%;
+  overflow-y: auto; /* Allow scrolling if content exceeds height */
+  text-align: left;
+  box-sizing: border-box; /* Ensure padding is included in width/height */
+  position: relative; /* For positioning close button */
+}
+
+/* Fixed title and close button at the top right */
+.modal-content h2, .modal-content #closeModal {
+  position: fixed;
+  top: 0;  /* Start from the very top of the screen */
+  right: 20px; /* Keep the close button on the top right */
+  background-color: #fff; /* Background for better visibility */
+  z-index: 1001; /* Ensure it stays above other content */
+  height: 40px;  /* Optional: Add height to the button */
+  font-size: 20px;
+  padding-top: 24px;
+  padding-left: 8%;
+  padding-right: 8%;
+  border: none; /* Remove border */
+  color: #333; /* Dark color for the "X" */
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  left: 20px;
+  margin: 0;
+}
+
+.modal-content #closeModal {
+  font-size: 24px; /* Make the "X" bigger */
+  font-weight: 300; 
+  background: none; 
+  color: #bab4b4;
+  cursor: pointer;
+}
+
+.modal-content #closeModal:hover {
+  color: #ff6200; /* Optional: Change color on hover */
+}
+
+/* Prevent body scrolling when modal is open */
+.modal-open {
+  overflow: hidden;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc; 
+  margin: 20px 0; 
+  width: 100%; 
 }
 
 /* Blog Section */
 #blog .blog-container {
   display: flex;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  gap: 20px;
+  overflow-x: auto;
+  gap: 30px;
   scroll-behavior: smooth;
   position: relative;
   width: 100%;
@@ -102,6 +193,32 @@ section {
   max-width: 50%;
 }
 
+.substack-post-embed {
+  flex-shrink: 0;
+  width: 50%; /* Adjust the width as per your requirement */
+  max-width: 800px; /* Optional: Limit the maximum width */
+  max-height: fit-content;
+  /* background-color: #f9f9f900; Optional: Add a background color for better visibility */
+  /* padding: 20px; Add padding for spacing */
+  border-radius: 20px; /* Optional: Round the corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better separation */
+}
+
+.substack-post-embed p {
+  margin: 10px 0; /* Add spacing between paragraphs */
+  line-height: 1.6; /* Improve readability */
+}
+
+.substack-post-embed a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.substack-post-embed a:hover {
+  text-decoration: underline;
+}
 
 /* Hide Scrollbar */
 .projects-container::-webkit-scrollbar,
