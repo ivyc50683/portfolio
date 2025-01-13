@@ -1,43 +1,91 @@
 /* General Section Styling */
 section {
-  font-family: "Arial", "Helvetica", sans-serif; /* Use sans-serif fonts */
+  font-family: "Arial", "Helvetica", sans-serif; 
   line-height: 150%;
-  width: 90%;
+  width: 95%;
   max-width: 1200px;
-  height: 100vh;
-  padding: 20px;
+  height: fit-content;
+  padding: 24px 0px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden; 
-  scroll-snap-type: y mandatory; /* Snap vertically */
-  scroll-snap-align: start; /* Snap to the start of each section */
-  scroll-snap-stop: always; /* Force snapping to happen immediately */
 }
 
+/* About Section Layout */
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; 
+  max-width: 900px;
+}
+
+/* GIF Styling */
 .about-gif {
-  width: 30%; /* Set the desired width */
-  height: auto; /* Maintain aspect ratio */
-  margin: 0 auto; /* Center the image horizontally */
-  display: block; /* Ensure it's treated as a block element */
+  width: 30%; 
+  height: auto;
+  padding-bottom: 30px;
 }
 
-/* Ensure sections that allow horizontal scrolling have appropriate width */
+/* About Description */
+.about-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 34px;
+  gap: 10px; /* Space between paragraph and links */
+  max-width: 800px; 
+  text-align: left; 
+}
+
+/* Paragraph Styling */
+.about-description p {
+  line-height: 1.5;
+}
+
+/* Social Links Container */
+.social-links {
+  display: flex;
+  gap: 10px; /* Space between links */
+}
+
+/* Individual Link Styling */
+.social-link {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(177, 177, 177);
+  transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.social-link:hover {
+  color: #ff6200;
+}
+
+/* Horizontal scroll */
 #projects, #blog {
-  width: 90%;
+  width: 95%;
   overflow: hidden; /* Prevent overflowing the container */
+  height: 100vh;
+
 }
 
 /* Projects Section */
 #projects .projects-container {
   display: flex;
-  overflow-x: auto;  /* Enable horizontal scrolling */
+  overflow-x: auto; 
   gap: 30px;
   scroll-behavior: smooth;
   position: relative;
-  width: 100%;
   padding-bottom: 20px; /* Add space for smooth scrolling */
 }
 
@@ -84,24 +132,24 @@ section {
   width: 100%;
   margin-top: 15px;
   padding: 10px;
-  background-color: #fff; /* White background */
-  color: #ff6200; /* Orange label */
-  font-weight: 600; /* Bold label */
-  font-size: 15px; /* Label size */
-  border: 0.5px solid #ccc; /* Thin grey border */
-  border-radius: 4px; /* Keep rounded corners */
+  background-color: #fff;
+  color: #ff6200;
+  font-weight: 600;
+  font-size: 15px;
+  border: 0.5px solid #ccc;
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
 
 .expand-btn:hover {
-  background-color: #f7f7f7; /* Slightly darker white on hover */
-  color: #ff6200; /* Slightly darker orange label on hover */
+  background-color: #f7f7f7;
+  color: #ff6200;
 }
 
 /* Modal */
 .modal {
-  font-family: "Arial", "Helvetica", sans-serif; /* Use sans-serif fonts */
+  font-family: "Arial", "Helvetica", sans-serif;
   line-height: 150%;
   display: none; /* Hidden by default */
   position: fixed;
@@ -109,7 +157,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(255, 255, 255); /* Semi-transparent background */
+  background-color: rgb(255, 255, 255);
   z-index: 999999;
   justify-content: center;
   align-items: center;
@@ -126,26 +174,26 @@ section {
   padding-bottom: 60px;
   padding-left: 10%;
   padding-right: 10%;
-  overflow-y: auto; /* Allow scrolling if content exceeds height */
+  overflow-y: auto;
   text-align: left;
-  box-sizing: border-box; /* Ensure padding is included in width/height */
-  position: relative; /* For positioning close button */
+  box-sizing: border-box;
+  position: relative;
 }
 
-/* Fixed title and close button at the top right */
+/* Fixed title and close button */
 .modal-content h2, .modal-content #closeModal {
   position: fixed;
-  top: 0;  /* Start from the very top of the screen */
-  right: 20px; /* Keep the close button on the top right */
-  background-color: #fff; /* Background for better visibility */
-  z-index: 1001; /* Ensure it stays above other content */
-  height: 40px;  /* Optional: Add height to the button */
+  top: 0; 
+  right: 20px;
+  background-color: #fff;
+  z-index: 1001;
+  height: 40px;
   font-size: 20px;
   padding-top: 24px;
-  padding-left: 8%;
-  padding-right: 8%;
-  border: none; /* Remove border */
-  color: #333; /* Dark color for the "X" */
+  padding-left: 10%;
+  padding-right: 10%;
+  border: none;
+  color: #333;
   cursor: pointer;
 }
 
@@ -155,7 +203,7 @@ section {
 }
 
 .modal-content #closeModal {
-  font-size: 24px; /* Make the "X" bigger */
+  font-size: 24px;
   font-weight: 300; 
   background: none; 
   color: #bab4b4;
@@ -163,7 +211,7 @@ section {
 }
 
 .modal-content #closeModal:hover {
-  color: #ff6200; /* Optional: Change color on hover */
+  color: #ff6200;
 }
 
 /* Prevent body scrolling when modal is open */
@@ -186,7 +234,7 @@ hr {
   scroll-behavior: smooth;
   position: relative;
   width: 100%;
-}
+  }
 
 .blog-description-card {
   min-width: 30%;
@@ -200,6 +248,7 @@ hr {
   max-height: fit-content;
   border-radius: 20px; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+
 }
 
 .substack-post-embed p {
@@ -226,13 +275,15 @@ hr {
   scroll-behavior: smooth;
   position: relative;
   width: 100%;
-  padding-bottom: 20px;
-  padding-right: 20px;
+  /* padding: 20px; */
+  padding-top: 5px;
+  height: 90vh;
 }
 
 .coding-description-card {
   min-width: 30%;
   max-width: 50%;
+  height: fit-content;
 }
 
 .coding-card {
@@ -242,7 +293,7 @@ hr {
   max-height: fit-content;
   border-radius: 20px; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Ensures any content stays inside the card */
+  overflow: hidden;
 }
 
 .coding-card img {

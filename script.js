@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const socialLinks = document.querySelectorAll('.social-link');
+
+    socialLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            console.log(`Navigating to: ${event.target.textContent}`);
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   // Expand/Collapse functionality for projects
   const expandButtons = document.querySelectorAll('.expand-btn');
 
