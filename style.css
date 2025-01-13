@@ -86,7 +86,7 @@ section {
   padding: 10px;
   background-color: #fff; /* White background */
   color: #ff6200; /* Orange label */
-  font-weight: 500; /* Bold label */
+  font-weight: 600; /* Bold label */
   font-size: 15px; /* Label size */
   border: 0.5px solid #ccc; /* Thin grey border */
   border-radius: 4px; /* Keep rounded corners */
@@ -195,18 +195,16 @@ hr {
 
 .substack-post-embed {
   flex-shrink: 0;
-  width: 50%; /* Adjust the width as per your requirement */
-  max-width: 800px; /* Optional: Limit the maximum width */
+  width: 50%; 
+  max-width: 800px; 
   max-height: fit-content;
-  /* background-color: #f9f9f900; Optional: Add a background color for better visibility */
-  /* padding: 20px; Add padding for spacing */
-  border-radius: 20px; /* Optional: Round the corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better separation */
+  border-radius: 20px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .substack-post-embed p {
-  margin: 10px 0; /* Add spacing between paragraphs */
-  line-height: 1.6; /* Improve readability */
+  margin: 10px 0; 
+  line-height: 1.6; 
 }
 
 .substack-post-embed a {
@@ -218,6 +216,80 @@ hr {
 
 .substack-post-embed a:hover {
   text-decoration: underline;
+}
+
+/* Coding Section */
+#coding .coding-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  scroll-behavior: smooth;
+  position: relative;
+  width: 100%;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+
+.coding-description-card {
+  min-width: 30%;
+  max-width: 50%;
+}
+
+.coding-card {
+  flex-shrink: 0;
+  width: 50%; 
+  max-width: 800px; 
+  max-height: fit-content;
+  border-radius: 20px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures any content stays inside the card */
+}
+
+.coding-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px 20px 0 0; 
+}
+
+.coding-card .project-content {
+  padding-bottom: 20px;
+  padding-left: 5%;
+  padding-right: 8%;
+}
+
+.coding-card .project-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.coding-card .project-preview {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* GitHub Button Style */
+.coding-card a {
+  display: inline-block;
+  width: 100%; 
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #fff; 
+  color: #ff6200; 
+  font-weight: 600; 
+  font-size: 15px; 
+  text-align: center; 
+  text-decoration: none; 
+  border: 0.5px solid #ccc; 
+  border-radius: 4px; 
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+.coding-card a:hover {
+  background-color: #f7f7f7; 
+  color: #ff6200; 
 }
 
 /* Hide Scrollbar */
