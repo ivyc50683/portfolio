@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalContent = modal.querySelector('.modal-content');
 
     // Handle all card buttons (previously expand-btn)
-    document.querySelectorAll('.card-button').forEach(button => {
+    document.querySelectorAll('button.card-button').forEach(button => {
         button.addEventListener('click', (event) => {
             const card = event.target.closest('.content-card');
             const title = card.querySelector('.section-title').textContent;
