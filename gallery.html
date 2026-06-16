@@ -37,36 +37,16 @@
         text-decoration: underline;
       }
 
-      a.back:hover {
-        color: #555;
-      }
+      a.back:hover { color: #555; }
 
       .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.75rem;
-        align-items: start;
-        grid-auto-flow: dense;
+        position: relative;
       }
 
       .grid img {
+        position: absolute;
         display: block;
-        width: 100%;
         height: auto;
-      }
-
-      .grid img.wide {
-        grid-column: span 2;
-      }
-
-      @media (max-width: 640px) {
-        .grid { grid-template-columns: repeat(2, 1fr); }
-        .grid img.wide { grid-column: span 2; }
-      }
-
-      @media (max-width: 400px) {
-        .grid { grid-template-columns: 1fr; }
-        .grid img.wide { grid-column: span 1; }
       }
     </style>
   </head>
@@ -79,36 +59,83 @@
 
       <div class="grid">
         <img src="assets/accessible_2.png" alt="Accessible Indoor Map detail" />
-        <img src="assets/accessible_3.png" alt="Accessible Indoor Map detail" class="wide" />
+        <img src="assets/accessible_3.png" alt="Accessible Indoor Map detail" data-wide />
         <img src="assets/accessible_4.png" alt="Accessible Indoor Map detail" />
         <img src="assets/accessible_5.gif" alt="Accessible Indoor Map animation" />
-        <img src="assets/indoor_map_app.gif" alt="Indoor Map App" class="wide" />
+        <img src="assets/indoor_map_app.gif" alt="Indoor Map App" data-wide />
         <img src="assets/indoor_1.png" alt="Indoor Map detail" />
-        <img src="assets/indoor_3.png" alt="Indoor Map detail" class="wide" />
+        <img src="assets/indoor_3.png" alt="Indoor Map detail" data-wide />
         <img src="assets/indoor_4.gif" alt="Indoor Map animation" />
         <img src="assets/indoor_5.gif" alt="Indoor Map animation" />
-        <img src="assets/map_management_portal.gif" alt="Map Management Portal" class="wide" />
-        <img src="assets/management_1.png" alt="Map Management Portal detail" class="wide" />
+        <img src="assets/map_management_portal.gif" alt="Map Management Portal" data-wide />
+        <img src="assets/management_1.png" alt="Map Management Portal detail" data-wide />
         <img src="assets/management_2.png" alt="Map Management Portal detail" />
-        <img src="assets/management_3.png" alt="Map Management Portal detail" class="wide" />
-        <img src="assets/management_5.png" alt="Map Management Portal detail" class="wide" />
-        <img src="assets/management_6.gif" alt="Map Management Portal animation" class="wide" />
-        <img src="assets/map_production_app.png" alt="Map Production App" class="wide" />
-        <img src="assets/production_1.png" alt="Map Production detail" class="wide" />
-        <img src="assets/production_2.png" alt="Map Production detail" class="wide" />
-        <img src="assets/production_4.png" alt="Map Production detail" class="wide" />
+        <img src="assets/management_3.png" alt="Map Management Portal detail" data-wide />
+        <img src="assets/management_5.png" alt="Map Management Portal detail" data-wide />
+        <img src="assets/management_6.gif" alt="Map Management Portal animation" data-wide />
+        <img src="assets/map_production_app.png" alt="Map Production App" data-wide />
+        <img src="assets/production_1.png" alt="Map Production detail" data-wide />
+        <img src="assets/production_2.png" alt="Map Production detail" data-wide />
+        <img src="assets/production_4.png" alt="Map Production detail" data-wide />
         <img src="assets/production_6.png" alt="Map Production detail" />
-        <img src="assets/production_7.png" alt="Map Production detail" class="wide" />
+        <img src="assets/production_7.png" alt="Map Production detail" data-wide />
         <img src="assets/production_8.gif" alt="Map Production animation" />
-        <img src="assets/customer_journey_map.png" alt="Customer Journey Map" class="wide" />
-        <img src="assets/journey_2.png" alt="Customer Journey detail" class="wide" />
+        <img src="assets/customer_journey_map.png" alt="Customer Journey Map" data-wide />
+        <img src="assets/journey_2.png" alt="Customer Journey detail" data-wide />
         <img src="assets/mental_1.png" alt="Mental Health App detail" />
         <img src="assets/mental_2.png" alt="Mental Health App detail" />
         <img src="assets/retail_1.png" alt="Retail Mall App detail" />
-        <img src="assets/retail_2.png" alt="Retail Mall App detail" class="wide" />
-        <img src="assets/retail_3.png" alt="Retail Mall App detail" class="wide" />
+        <img src="assets/retail_2.png" alt="Retail Mall App detail" data-wide />
+        <img src="assets/retail_3.png" alt="Retail Mall App detail" data-wide />
         <img src="assets/retail_4.gif" alt="Retail Mall App animation" />
       </div>
     </div>
+
+    <script>
+      const GAP = 12;
+
+      function getCols() {
+        if (window.innerWidth <= 400) return 1;
+        if (window.innerWidth <= 640) return 2;
+        return 3;
+      }
+
+      function layout() {
+        const grid = document.querySelector('.grid');
+        const imgs = Array.from(grid.querySelectorAll('img'));
+        const cols = getCols();
+        const gridWidth = grid.offsetWidth;
+        const colWidth = (gridWidth - GAP * (cols - 1)) / cols;
+        const colHeights = new Array(cols).fill(0);
+
+        imgs.forEach(img => {
+          const span = (img.hasAttribute('data-wide') && cols >= 2) ? Math.min(2, cols) : 1;
+          const w = colWidth * span + GAP * (span - 1);
+          const h = (img.naturalHeight / img.naturalWidth) * w;
+
+          // find the column position with the lowest height that fits the span
+          let bestCol = 0;
+          let minH = Infinity;
+          for (let i = 0; i <= cols - span; i++) {
+            const top = Math.max(...colHeights.slice(i, i + span));
+            if (top < minH) { minH = top; bestCol = i; }
+          }
+
+          img.style.left = (bestCol * (colWidth + GAP)) + 'px';
+          img.style.top  = minH + 'px';
+          img.style.width = w + 'px';
+
+          const bottom = minH + h + GAP;
+          for (let i = bestCol; i < bestCol + span; i++) colHeights[i] = bottom;
+        });
+
+        grid.style.height = Math.max(...colHeights) + 'px';
+      }
+
+      window.addEventListener('load', () => {
+        layout();
+        window.addEventListener('resize', layout);
+      });
+    </script>
   </body>
 </html>
