@@ -48,6 +48,11 @@
         display: block;
         height: auto;
       }
+
+      .grid img:not([data-wide]) {
+        max-height: 420px;
+        object-fit: cover;
+      }
     </style>
   </head>
   <body>
@@ -93,6 +98,7 @@
 
     <script>
       const GAP = 12;
+      const MAX_PORTRAIT_H = 420;
 
       function getCols() {
         if (window.innerWidth <= 400) return 1;
@@ -109,11 +115,13 @@
         const colHeights = new Array(cols).fill(0);
 
         imgs.forEach(img => {
-          const span = (img.hasAttribute('data-wide') && cols >= 2) ? Math.min(2, cols) : 1;
+          const isWide = img.hasAttribute('data-wide');
+          const span = (isWide && cols >= 2) ? Math.min(2, cols) : 1;
           const w = colWidth * span + GAP * (span - 1);
-          const h = (img.naturalHeight / img.naturalWidth) * w;
+          const naturalH = (img.naturalHeight / img.naturalWidth) * w;
+          const h = isWide ? naturalH : Math.min(naturalH, MAX_PORTRAIT_H);
 
-          // find the column position with the lowest height that fits the span
+          // find the column position with the lowest combined height
           let bestCol = 0;
           let minH = Infinity;
           for (let i = 0; i <= cols - span; i++) {
@@ -121,8 +129,8 @@
             if (top < minH) { minH = top; bestCol = i; }
           }
 
-          img.style.left = (bestCol * (colWidth + GAP)) + 'px';
-          img.style.top  = minH + 'px';
+          img.style.left  = (bestCol * (colWidth + GAP)) + 'px';
+          img.style.top   = minH + 'px';
           img.style.width = w + 'px';
 
           const bottom = minH + h + GAP;
