@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessible Indoor Map App — Ivy Chan</title>
+    <style>
+      body {
+        background: #fff;
+        color: #222;
+        font: 1rem/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        margin: 0;
+      }
+      .container {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 4rem;
+      }
+      .back { font-size: 0.875rem; margin: 0 0 0.25rem; }
+      h1 { font-size: 1.75rem; font-weight: bold; margin: 0.5rem 0 1.5rem; }
+      hr { border: none; border-top: 1px solid #ccc; margin: 2rem 0; }
+      h2 { font-size: 1.25rem; font-weight: bold; margin: 1.75rem 0 0.5rem; }
+      p { margin: 0 0 1rem; font-size: 0.875rem; }
+      a { color: #222; text-decoration: underline; }
+      a:hover { color: #555; }
+      .full-img { display: block; width: 100%; height: auto; margin: 0 0 1.5rem; }
+      .portrait-img { display: block; width: 50%; height: auto; margin: 0 0 1.5rem; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="back"><a href="draft.html">← Work</a></p>
+      <h1>Accessible Indoor Map App</h1>
+      <hr />
+
+      <p>
+        Citygeni is Mapxus's accessible indoor navigation app, built for users
+        across the visual impairment spectrum. I led the user research programme
+        and worked directly with the design team to translate findings into
+        product decisions, from core navigation mechanics to interface details.
+      </p>
+
+      <img class="full-img" src="assets/accessible_1.png" alt="Accessible Indoor Map App detail" />
+      <img class="full-img" src="assets/accessible_2.png" alt="Accessible Indoor Map App detail" />
+
+      <h2>Research</h2>
+
+      <p>
+        I conducted in-depth interviews with participants across the full
+        spectrum of visual impairment, from those with complete blindness to
+        those with low or residual vision. The two groups had fundamentally
+        different spatial perception strategies, which shaped every subsequent
+        design decision.
+      </p>
+      <p>
+        Participants who were blind had developed exceptional sensitivity to
+        non-visual cues: air direction to locate exits and entrances, the sound
+        and feel of floor tiles to orient themselves, and pole feedback to judge
+        obstacle distance. Notably, none relied on VoiceOver or TalkBack,
+        they had built their own systems. This told us the app needed to work
+        with those systems, not attempt to replace them.
+      </p>
+      <p>
+        Participants with low vision still led with sight, but their visual
+        experience was highly specific. They found standard high-contrast
+        interfaces (black text on white) more fatiguing than lower-contrast
+        alternatives. They needed a minimum 16px font size and preferred large
+        iconography over text labels for direction cues. These were not
+        preferences, they were functional requirements.
+      </p>
+
+      <img class="full-img" src="assets/accessible_3.png" alt="Accessible Indoor Map App research findings" />
+      <img class="full-img" src="assets/accessible_4.png" alt="Accessible Indoor Map App design" />
+
+      <h2>Accessibility features</h2>
+
+      <p>
+        One of the core challenges was communicating spatial direction in an
+        indoor environment without relying on visual landmarks. I designed
+        the "sound beacon", a directional audio system that guides blind users
+        through navigation steps, calibrated to work alongside the spatial
+        awareness strategies participants had described in research.
+      </p>
+
+      <img class="portrait-img" src="assets/accessible_5.gif" alt="Sound beacon navigation animation" />
+
+      <p>
+        For low vision users, the interface used a black background with yellow
+        text, a combination that reduced visual fatigue based on what
+        participants reported. Text was kept minimal throughout; navigation
+        directions were communicated through large animations occupying most of
+        the screen, reducing the need to read under pressure. Every decision
+        traced back directly to a research finding.
+      </p>
+
+      <h2>Launch</h2>
+
+      <p>
+        Citygeni launched on
+        <a href="https://play.google.com/store/apps/details?id=com.mapxus.citygeni&hl=en_GB" target="_blank">Google Play</a>
+        and the <a href="https://apps.apple.com/hk/app/citygeni/id6475540142?l=en-GB" target="_blank">App Store</a>
+        after six months of development.
+      </p>
+
+    </div>
+  </body>
+</html>

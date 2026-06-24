@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indoor Map App — Ivy Chan</title>
+    <style>
+      body {
+        background: #fff;
+        color: #222;
+        font: 1rem/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        margin: 0;
+      }
+      .container {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 4rem;
+      }
+      .back { font-size: 0.875rem; margin: 0 0 0.25rem; }
+      h1 { font-size: 1.75rem; font-weight: bold; margin: 0.5rem 0 1.5rem; }
+      hr { border: none; border-top: 1px solid #ccc; margin: 2rem 0; }
+      h2 { font-size: 1.25rem; font-weight: bold; margin: 1.75rem 0 0.5rem; }
+      p { margin: 0 0 1rem; font-size: 0.875rem; }
+      a { color: #222; text-decoration: underline; }
+      a:hover { color: #555; }
+      .full-img { display: block; width: 100%; height: auto; margin: 0 0 1.5rem; }
+      .portrait-img { display: block; width: 50%; height: auto; margin: 0 0 1.5rem; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="back"><a href="draft.html">← Work</a></p>
+      <h1>Indoor Map App</h1>
+      <hr />
+
+      <p>
+        Mapxus Anywhere is the company's flagship indoor navigation product, an
+        interactive map that enables real-time positioning, search, and route
+        guidance within complex indoor spaces. I led the user research, defined
+        the user experience, and drove the product to launch.
+      </p>
+
+      <img class="full-img" src="assets/indoor_1.png" alt="Indoor Map App detail" />
+
+      <h2>Research</h2>
+
+      <p>
+        Research revealed a consistent gap in how people navigate indoors versus
+        outdoors. Participants were comfortable with GPS-based apps in outdoor
+        environments, but indoors they defaulted to static maps or approached
+        customer service desks. The key finding was not that people lacked
+        interest in digital indoor navigation, it was that nothing had yet met
+        their expectations for real-time, interactive guidance in those spaces.
+      </p>
+      <p>
+        Participants were specific about what they needed: the ability to locate
+        points of interest, understand their position relative to the space, and
+        find accessible routes. These informed the core feature set and priority
+        order for the product.
+      </p>
+
+      <img class="full-img" src="assets/indoor_2.gif" alt="Indoor Map App interaction" />
+
+      <h2>Design</h2>
+
+      <p>
+        My design brief was to make powerful positioning technology feel
+        invisible, the more complex the system, the simpler the experience
+        needed to be. I studied the underlying technology in depth: Mapxus's
+        Indoor Positioning System uses Wi-Fi fingerprinting to determine location
+        from signal patterns, combined with Pedestrian Dead Reckoning (PDR) for
+        step-by-step displacement tracking. Understanding how the system worked
+        let me design around its constraints and latency characteristics rather
+        than against them.
+      </p>
+      <p>
+        The design principle throughout was minimising cognitive load: familiar
+        interaction patterns, information presented only when needed, and a
+        reduced number of steps for common tasks. The more capable the underlying
+        technology, the more restraint was required in the interface.
+      </p>
+
+      <img class="full-img" src="assets/indoor_3.png" alt="Indoor Map App design detail" />
+
+      <p>
+        One deliberate decision was to differentiate the mobile and desktop
+        navigation experiences. Desktop users are unlikely to be walking through
+        a venue, so rather than replicating the mobile navigation flow, the
+        desktop version displays a QR code directing users to their phone, where
+        navigation makes practical sense.
+      </p>
+
+      <img class="full-img" src="assets/indoor_4.gif" alt="Indoor Map App navigation animation" />
+      <img class="portrait-img" src="assets/indoor_5.gif" alt="Indoor Map App feature animation" />
+
+      <h2>Launch</h2>
+
+      <p>
+        The app launched on
+        <a href="https://play.google.com/store/apps/details?id=com.mapxus.tocapp" target="_blank">Google Play</a>
+        and the
+        <a href="https://apps.apple.com/hk/app/mapxus/id6467710889" target="_blank">App Store</a>
+        after six months of development. It is also available as a
+        <a href="https://anywhere.mapxus.com/" target="_blank">web app</a>
+        and as an SDK for third-party integration.
+      </p>
+
+    </div>
+  </body>
+</html>

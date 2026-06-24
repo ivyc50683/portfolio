@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Production App — Ivy Chan</title>
+    <style>
+      body {
+        background: #fff;
+        color: #222;
+        font: 1rem/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        margin: 0;
+      }
+      .container {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 4rem;
+      }
+      .back { font-size: 0.875rem; margin: 0 0 0.25rem; }
+      h1 { font-size: 1.75rem; font-weight: bold; margin: 0.5rem 0 1.5rem; }
+      hr { border: none; border-top: 1px solid #ccc; margin: 2rem 0; }
+      h2 { font-size: 1.25rem; font-weight: bold; margin: 1.75rem 0 0.5rem; }
+      p { margin: 0 0 1rem; font-size: 0.875rem; }
+      a { color: #222; text-decoration: underline; }
+      a:hover { color: #555; }
+      .full-img { display: block; width: 100%; height: auto; margin: 0 0 1.5rem; }
+      .portrait-img { display: block; width: 50%; height: auto; margin: 0 0 1.5rem; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="back"><a href="draft.html">← Work</a></p>
+      <h1>Map Production App</h1>
+      <hr />
+
+      <p>
+        As a recognised
+        <a href="https://register.apple.com/resources/indoor/program/faq" target="_blank">Apple indoor map data provider</a>,
+        Mapxus depends on accurate, up-to-date map data across all venues it
+        covers. When venues change layout or structure, field teams need to
+        validate the digital maps on-site, and that validation process had no
+        dedicated tooling. I led the research and design of the site validation
+        app, and restructured the broader map production workflow around the findings.
+      </p>
+
+      <h2>Research</h2>
+
+      <img class="full-img" src="assets/production_1.png" alt="Map Production research" />
+
+      <p>
+        I conducted field research with production and validation teams across
+        multiple regions, observing their workflows on-site and interviewing
+        key stakeholders. I also reviewed the
+        <a href="https://register.apple.com/resources/imdf/" target="_blank">Apple Indoor Mapping Data Format (IMDF) standard</a>
+        to understand the technical requirements the tool needed to satisfy.
+        The research identified three systemic problems: lack of transparency
+        in the validation process, insufficient instruction at the point of
+        task, and approval bottlenecks that slowed the entire pipeline.
+      </p>
+
+      <h2>Workflow mapping</h2>
+
+      <img class="full-img" src="assets/production_2.png" alt="Production workflow map" />
+
+      <p>
+        I mapped the end-to-end production workflow, making the pain points
+        and handoff failures visible across teams. This became the basis for
+        aligning stakeholders on where intervention would have the most impact,
+        and for sequencing the design work to address the highest-priority
+        problems first.
+      </p>
+
+      <h2>Design</h2>
+
+      <p>
+        The core design challenge was giving field teams enough structure to
+        work accurately without creating overhead that slowed them down. I
+        designed a taxonomy of 7 remark types to standardise how validation
+        issues were recorded, a "remark board" for team-wide visibility, and
+        a progress tracker so both field teams and stakeholders could see
+        status in real time. Simpler tools, better transparency, and clear
+        instructions at every step.
+      </p>
+
+      <img class="full-img" src="assets/production_3.png" alt="Map Production design" />
+      <img class="full-img" src="assets/production_4.png" alt="Map Production detail" />
+      <img class="full-img" src="assets/production_5.png" alt="Map Production detail" />
+      <img class="full-img" src="assets/production_6.png" alt="Map Production detail" />
+      <img class="full-img" src="assets/production_7.png" alt="Map Production detail" />
+
+      <h2>Launch</h2>
+
+      <p>
+        The app launched across Hong Kong, Taiwan, and Japan, followed by
+        training and structured feedback sessions with field teams. The new
+        workflow reduced the production team's workload by 70% and measurably
+        improved job satisfaction among validation staff.
+      </p>
+
+      <img class="portrait-img" src="assets/production_8.gif" alt="Map Production App animation" />
+
+    </div>
+  </body>
+</html>
